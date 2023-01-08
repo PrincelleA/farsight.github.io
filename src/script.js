@@ -119,7 +119,7 @@ function loadStars(data) {
 	geometry.setAttribute("color", new THREE.BufferAttribute(new Float32Array(colors)));
 
 	// Apply texture
-	const loader = new THREE.TextureLoader().load(".../images/star.png");
+	const loader = new THREE.TextureLoader().load("../images/star.png");
 
 	// Set material
 	var starMaterial = new THREE.PointsMaterial({
@@ -259,7 +259,7 @@ var updateMarkers = function (markers, camera) {
 var sphereGeom = new THREE.SphereGeometry(9000000, 32, 16);
 
 // Apply texture
-var texture = new THREE.TextureLoader().load(".../images/milkyway.jpg");
+var texture = new THREE.TextureLoader().load("../images/milkyway.jpg");
 
 texture.magFilter = THREE.LinearFilter;
 texture.minFilter = THREE.NearestFilter;
