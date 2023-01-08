@@ -1,0 +1,36 @@
+// Import font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/*
+ * VARIABLES
+ */
+
+// Colors
+$primary-color: rgb(255, 255, 255);
+$marker-background: rgba(255, 0, 225, 0.558);
+$gradient-background: rgb(0, 0, 0), rgba(0, 0, 0, 0.497), rgba(0, 0, 0, 0);
+
+// Font Sizes
+
+// Typography
+$primary-font: "Inter", sans-serif;
+
+// Margin
+$global-margin: 3em;
+
+// Breakpoints
+$breakpoint-min-mobile: 321px;
+$breakpoint-min-tablet: 481px;
+$breakpoint-min-laptop: 769px;
+$breakpoint-min-desktop: 1025px;
+
+/*
+ * MIXINS
+ */
+
+// Handles media queries
+@mixin breakpoint($minwidth) {
+	@media screen and (min-width: $minwidth) {
+		@content;
+	}
+}
