@@ -1,0 +1,193 @@
+// Imports the variables and mixins
+@import "../css/abstracts.scss";
+
+/*
+ * STYLE
+ * RESET
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*
+ * BASE
+ * STYLING
+ */
+
+html,
+body {
+	height: 100vh;
+	width: 100vw;
+	background: black;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	font-family: $primary-font;
+	font-size: 2.5vw;
+
+	@include breakpoint($breakpoint-min-laptop) {
+		// Decreases font size for larger screens
+		font-size: 1.5vw;
+	}
+}
+
+/*
+ * THREE
+ * JS
+ */
+
+// Canvas
+.container {
+	z-index: 100;
+	position: absolute;
+}
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	outline: none;
+	display: block;
+	height: 100vh;
+	width: 100vw;
+}
+
+// Constellation labels
+div .marker {
+	position: fixed;
+
+	display: inline-block;
+	color: $primary-color;
+	font-size: 9pt;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.marker p {
+	background-color: $marker-background;
+	padding: 2px;
+	border-radius: 2px;
+	margin: 0;
+	font-weight: medium;
+}
+
+/*
+ * MAIN
+ * CONTENT
+ */
+
+main {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	@include breakpoint($breakpoint-min-tablet) {
+		flex-direction: row;
+	}
+}
+
+.zodiac-content {
+	width: 100%;
+	display: block;
+	text-align: left;
+	z-index: 9999;
+	position: absolute;
+	color: white;
+	top: 0;
+	background: none;
+
+	@include breakpoint($breakpoint-min-tablet) {
+		width: 50%;
+
+		// Adds gradient background for the text
+		background: linear-gradient(to right, $gradient-background);
+	}
+
+	@include breakpoint($breakpoint-min-laptop) {
+		width: 45%;
+	}
+
+	.zodiac-section {
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		margin: 5em $global-margin;
+
+		@include breakpoint($breakpoint-min-tablet) {
+			justify-content: center;
+			margin: 0em $global-margin;
+		}
+
+		h2,
+		p {
+			margin-top: 1em;
+		}
+
+		ul {
+			list-style-type: none;
+			margin-top: 2em;
+			display: flex;
+			// flex-direction: column;
+			justify-content: space-between;
+			flex-wrap: wrap;
+
+			li {
+				margin-right: 2em;
+			}
+		}
+	}
+}
+
+/*
+ * INDICATOR
+ */
+
+.scrollable-indicator {
+	display: none;
+	background: none;
+
+	@include breakpoint($breakpoint-min-tablet) {
+		// Creates a scrollable indicator for larger screens
+		height: 100vh;
+		padding: $global-margin;
+		z-index: 9999;
+		position: fixed;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(to left, $gradient-background);
+	}
+
+	.indicator-nav {
+		li {
+			list-style-type: none;
+			cursor: pointer;
+
+			span {
+				display: inline-block;
+				width: 2em;
+				height: 2em;
+				border: 3px solid $primary-color;
+				border-radius: 50%;
+				margin: 2px 2.5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: white;
+			}
+		}
+
+		// Changes appearance of button when selected / active
+		li.active {
+			span {
+				background-color: $primary-color;
+				color: black;
+			}
+		}
+	}
+}

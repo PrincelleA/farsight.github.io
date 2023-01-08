@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ThreeJS Starter</title>
+    <title>Farsight</title>
+
 </head>
+
 <body>
-    <canvas class="webgl"></canvas>
+    <!-- Main Container -->
+    <main>
+        <!-- Zodiac Horoscope Sections -->
+        <div class="zodiac-content">
+            <section id="aries" class="zodiac-section"></section>
+            <section id="taurus" class="zodiac-section"></section>
+            <section id="gemini" class="zodiac-section"></section>
+            <section id="cancer" class="zodiac-section"></section>
+            <section id="leo" class="zodiac-section"></section>
+            <section id="virgo" class="zodiac-section"></section>
+            <section id="libra" class="zodiac-section"></section>
+            <section id="scorpio" class="zodiac-section"></section>
+            <section id="sagittarius" class="zodiac-section"></section>
+            <section id="capricorn" class="zodiac-section"></section>
+            <section id="aquarius" class="zodiac-section"></section>
+            <section id="pisces" class="zodiac-section"></section>
+        </div>
+
+        <div class="scrollable-indicator">
+            <ul class="indicator-nav">
+                <li class="active" data-label="aries"><span>♈︎</span></li>
+                <li data-label="taurus"><span>♉︎</span></li>
+                <li data-label="gemini"><span>♊︎</span></li>
+                <li data-label="cancer"><span>♋︎</span></li>
+                <li data-label="leo"><span>♌︎</span></li>
+                <li data-label="virgo"><span>♍︎</span></li>
+                <li data-label="libra"><span>♎︎</span></li>
+                <li data-label="scorpio"><span>♏︎</span></li>
+                <li data-label="sagittarius"><span>♐︎</span></li>
+                <li data-label="capricorn"><span>♑︎</span></li>
+                <li data-label="aquarius"><span>♒︎</span></li>
+                <li data-label="pisces"><span>♓︎</span></li>
+            </ul>
+            </section>
+    </main>
+
+    <!-- Canvas for three js -->
+    <div class="container">
+        <canvas class="webgl"></canvas>
+    </div>
+
 </body>
+
 </html>
